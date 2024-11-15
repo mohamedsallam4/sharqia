@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sharqia/ForgetPassword.dart';
+import 'package:sharqia/HomePage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -97,7 +99,12 @@ class _LoginPageState extends State<LoginPage> {
                     overlayColor: MaterialStatePropertyAll(
                   Color.fromARGB(141, 54, 7, 69),
                 )),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const forgrtPassword()));
+                },
                 child: const Text("Forgot Password?",
                     style: TextStyle(
                       color: Color.fromARGB(255, 53, 7, 69),
@@ -113,7 +120,19 @@ class _LoginPageState extends State<LoginPage> {
                     style: const ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(
                             Color.fromARGB(255, 53, 7, 69))),
-                    onPressed: () {},
+                    onPressed: () {
+/*
+فيه خطأكبير هنا خطأ ال push 
+
+
+
+                      */
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => homePage(),
+                          ));
+                    },
                     child: const Text("Login"),
                   ),
                 ),

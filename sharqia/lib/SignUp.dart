@@ -11,7 +11,7 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
-  Gender? _selectedGender; // متغير لتخزين الجنس المختار
+  Gender? _selectedGender;
   bool _isPasswordHidden = true;
 
   void _togglePasswordVisibility() {
@@ -333,7 +333,6 @@ class _SignupPageState extends State<SignupPage> {
                         color: Color.fromARGB(255, 53, 7, 69),
                         fontWeight: FontWeight.bold),
                   )),
-
               Row(
                 children: [
                   Expanded(
@@ -378,7 +377,6 @@ class _SignupPageState extends State<SignupPage> {
                 ],
               ),
               const SizedBox(height: 15),
-
               Row(
                 children: [
                   Expanded(
@@ -399,8 +397,6 @@ class _SignupPageState extends State<SignupPage> {
                 ],
               ),
               const SizedBox(height: 24),
-
-              // Sign Up Link
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

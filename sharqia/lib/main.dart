@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'package:sharqia/SignUp.dart';
+import 'package:sharqia/ForgetPassword.dart';
+import 'package:sharqia/Login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignupPage(),
+      home: LoginPage(),
     );
   }
 }
