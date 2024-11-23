@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sharqia/Login.dart';
-import 'package:sharqia/SignUp.dart';
+import 'package:sharqia/homePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: LoginPage());
+      debugShowCheckedModeBanner: false,
+      home: homePage(),
+    );
   }
 }

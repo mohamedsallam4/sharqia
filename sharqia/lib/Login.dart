@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sharqia/ForgetPassword.dart';
 import 'package:sharqia/HomePage.dart';
-import 'package:sharqia/SignUp.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -60,7 +59,6 @@ class _LoginPageState extends State<LoginPage> {
               keyboardType: TextInputType.emailAddress,
             ),
             const SizedBox(height: 20),
-
             TextField(
               cursorColor: const Color.fromARGB(255, 53, 7, 69),
               obscureText: _isPasswordHidden,
@@ -92,7 +90,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             const SizedBox(height: 6),
-
             Align(
               alignment: Alignment.centerRight,
               child: TextButton(
@@ -113,7 +110,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             const SizedBox(height: 15),
-
             Row(
               children: [
                 Expanded(
@@ -122,17 +118,10 @@ class _LoginPageState extends State<LoginPage> {
                         backgroundColor: MaterialStatePropertyAll(
                             Color.fromARGB(255, 53, 7, 69))),
                     onPressed: () {
-/*
-فيه خطأكبير هنا خطأ ال push 
-
-
-
-                      */
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => homePage(),
-                          ));
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => homePage()),
+                      );
                     },
                     child: const Text("Login"),
                   ),
@@ -140,7 +129,6 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             const SizedBox(height: 15),
-
             Row(
               children: [
                 Expanded(
@@ -161,8 +149,6 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             const SizedBox(height: 24),
-
-            // Sign Up Link
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -174,13 +160,7 @@ class _LoginPageState extends State<LoginPage> {
                   style: const ButtonStyle(
                       overlayColor: MaterialStatePropertyAll(
                           Color.fromARGB(141, 54, 7, 69))),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SignupPage(),
-                        ));
-                  },
+                  onPressed: () {},
                   child: const Text(
                     "Sign Up",
                     style: TextStyle(color: Color.fromARGB(255, 53, 7, 69)),

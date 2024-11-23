@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sharqia/Login.dart';
 
 enum Gender { male, female }
 
@@ -409,13 +408,7 @@ class _SignupPageState extends State<SignupPage> {
                     style: const ButtonStyle(
                         overlayColor: MaterialStatePropertyAll(
                             Color.fromARGB(141, 54, 7, 69))),
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => LoginPage(),
-                          ));
-                    },
+                    onPressed: () {},
                     child: const Text(
                       "Log in",
                       style: TextStyle(color: Color.fromARGB(255, 53, 7, 69)),

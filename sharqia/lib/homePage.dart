@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:appbar_animated/appbar_animated.dart';
 
-// ignore: camel_case_types
+import 'package:sharqia/personalAcc.dart';
+
 class homePage extends StatefulWidget {
   const homePage({super.key});
 
@@ -9,7 +10,6 @@ class homePage extends StatefulWidget {
   State<StatefulWidget> createState() => _homePageState();
 }
 
-// ignore: camel_case_types
 class _homePageState extends State<homePage> {
   final List<String> productImages = [
     'images/أفضل-الأماكن-السياحية-في-مصر-2023.jpg',
@@ -23,9 +23,7 @@ class _homePageState extends State<homePage> {
     "images/منطقة-وسط-البلد-القاهرة.jpg",
   ];
 
-  // قائمة الأيقونات للأصناف
   final List<IconData> categoriesIcons = [
-    Icons.account_circle,
     Icons.local_post_office_rounded,
     Icons.favorite,
     Icons.restaurant,
@@ -38,8 +36,25 @@ class _homePageState extends State<homePage> {
     Icons.directions_car_filled_rounded,
     Icons.local_cafe_rounded,
     Icons.dry_cleaning_sharp,
-    Icons.qr_code_scanner_outlined,
-    Icons.category,
+    Icons.shopping_cart,
+    Icons.question_mark_rounded,
+  ];
+
+  final List<Widget> pages = [
+    Scaffold(body: Center(child: Text("Masseges"))),
+    Scaffold(body: Center(child: Text("Favorite"))),
+    Scaffold(body: Center(child: Text("Resturand"))),
+    Scaffold(body: Center(child: Text("Locations"))),
+    Scaffold(body: Center(child: Text("Gardens"))),
+    Scaffold(body: Center(child: Text("Takeaway"))),
+    Scaffold(body: Center(child: Text("Gym"))),
+    Scaffold(body: Center(child: Text("Train Station"))),
+    Scaffold(body: Center(child: Text("Bus station"))),
+    Scaffold(body: Center(child: Text("Taxi"))),
+    Scaffold(body: Center(child: Text("Caffe"))),
+    Scaffold(body: Center(child: Text("Clothes"))),
+    Scaffold(body: Center(child: Text("Shopping mall"))),
+    Scaffold(body: Center(child: Text("Help"))),
   ];
 
   @override
@@ -73,7 +88,6 @@ class _homePageState extends State<homePage> {
                 ),
                 child: Column(
                   children: [
-                    // ListView أفقية للأيقونات
                     SizedBox(
                       height: 60,
                       child: ListView.builder(
@@ -88,7 +102,12 @@ class _homePageState extends State<homePage> {
                                 icon: Icon(categoriesIcons[index],
                                     color: Colors.white),
                                 onPressed: () {
-                                  // يمكنك إضافة منطق لتغيير الأصناف أو الفئات هنا
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => pages[index],
+                                    ),
+                                  );
                                 },
                               ),
                             ),
@@ -97,7 +116,6 @@ class _homePageState extends State<homePage> {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    // GridView للبضائع
                     Expanded(
                       child: GridView.builder(
                         itemCount: productImages.length,
@@ -149,6 +167,19 @@ class _homePageState extends State<homePage> {
 
   Widget _appBar(BuildContext context, ColorAnimated colorAnimated) {
     return AppBar(
+      leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const personAcc(),
+                ));
+          },
+          icon: const Icon(
+            color: Colors.white,
+            Icons.account_circle,
+            size: 35,
+          )),
       centerTitle: true,
       backgroundColor: colorAnimated.background,
       elevation: 0,
@@ -192,8 +223,19 @@ class ProductDetailPage extends StatelessWidget {
 }
 
 class CustomSearchDelegate extends SearchDelegate {
+  final List<String> searchTerms = [
+    'Nile',
+    'Giza Pyramids',
+    'Luxor Temple',
+    'Aswan',
+    'Hurghada',
+    'Pharaonic Temples',
+    'Diving in Egypt',
+    'Downtown Cairo',
+  ];
+
   @override
-  List<Widget> buildActions(BuildContext context) {
+  List<Widget>? buildActions(BuildContext context) {
     return [
       IconButton(
         icon: const Icon(Icons.clear),
@@ -205,7 +247,7 @@ class CustomSearchDelegate extends SearchDelegate {
   }
 
   @override
-  Widget buildLeading(BuildContext context) {
+  Widget? buildLeading(BuildContext context) {
     return IconButton(
       icon: const Icon(Icons.arrow_back),
       onPressed: () {
@@ -216,42 +258,50 @@ class CustomSearchDelegate extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    return Center(
-      child: Text(" Results of your search <3 \"$query\""),
+    List<String> matchQuery = [];
+    for (var item in searchTerms) {
+      if (item.toLowerCase().contains(query.toLowerCase())) {
+        matchQuery.add(item);
+      }
+    }
+    return ListView.builder(
+      itemCount: matchQuery.length,
+      itemBuilder: (context, index) {
+        var result = matchQuery[index];
+        return ListTile(
+          title: Text(result),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Scaffold(
+                  appBar: AppBar(title: Text(result)),
+                  body: Center(child: Text('Details about $result')),
+                ),
+              ),
+            );
+          },
+        );
+      },
     );
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    List<String> suggestions = [
-      "Minya elqamh",
-      "Mashtul Elsoq",
-      "Elshabrawen",
-      "Hefna",
-      "Zagazig",
-      "Hehia",
-      "Elbalashun",
-      "10 of Ramadan city ",
-      "Etmida",
-      "شنبارة الميمونة",
-      "الزنشلون",
-      "كفر صقر",
-      "ابوكبير",
-      "ابو حماد",
-      "هيهيا",
-      "شبلنجة",
-      "العزازيه",
-    ]
-        .where((item) => item.toLowerCase().contains(query.toLowerCase()))
-        .toList();
-
+    List<String> matchQuery = [];
+    for (var item in searchTerms) {
+      if (item.toLowerCase().contains(query.toLowerCase())) {
+        matchQuery.add(item);
+      }
+    }
     return ListView.builder(
-      itemCount: suggestions.length,
+      itemCount: matchQuery.length,
       itemBuilder: (context, index) {
+        var suggestion = matchQuery[index];
         return ListTile(
-          title: Text(suggestions[index]),
+          title: Text(suggestion),
           onTap: () {
-            query = suggestions[index];
+            query = suggestion;
             showResults(context);
           },
         );
