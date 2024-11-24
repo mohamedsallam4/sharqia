@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class personAcc extends StatefulWidget {
   const personAcc({super.key});
 
@@ -7,11 +8,14 @@ class personAcc extends StatefulWidget {
   State<StatefulWidget> createState() => _personAccState();
 }
 
+// ignore: camel_case_types
 class _personAccState extends State<personAcc> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 53, 7, 69),
         title: const Text("Profile"),
       ),
       body: ListView(
@@ -22,28 +26,28 @@ class _personAccState extends State<personAcc> {
           Column(
             children: [
               ClipOval(
-                child: Container(
+                child: SizedBox(
                   height: 150,
                   width: 150,
                   child: Image.asset(
-                    "images/الغردقة.jpg",
+                    "images/mo.jpg",
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 13,
               ),
-              Text(
+              const Text(
                 "Origi Abdo",
                 style: TextStyle(fontSize: 25),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 13,
               ),
             ],
           ),
-          Row(
+          const Row(
             children: [
               Expanded(
                   child: Card(

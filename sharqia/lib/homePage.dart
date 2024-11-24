@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:appbar_animated/appbar_animated.dart';
-
 import 'package:sharqia/personalAcc.dart';
 
+// ignore: camel_case_types
 class homePage extends StatefulWidget {
   const homePage({super.key});
 
@@ -10,6 +10,7 @@ class homePage extends StatefulWidget {
   State<StatefulWidget> createState() => _homePageState();
 }
 
+// ignore: camel_case_types
 class _homePageState extends State<homePage> {
   final List<String> productImages = [
     'images/أفضل-الأماكن-السياحية-في-مصر-2023.jpg',
@@ -41,20 +42,160 @@ class _homePageState extends State<homePage> {
   ];
 
   final List<Widget> pages = [
-    Scaffold(body: Center(child: Text("Masseges"))),
-    Scaffold(body: Center(child: Text("Favorite"))),
-    Scaffold(body: Center(child: Text("Resturand"))),
-    Scaffold(body: Center(child: Text("Locations"))),
-    Scaffold(body: Center(child: Text("Gardens"))),
-    Scaffold(body: Center(child: Text("Takeaway"))),
-    Scaffold(body: Center(child: Text("Gym"))),
-    Scaffold(body: Center(child: Text("Train Station"))),
-    Scaffold(body: Center(child: Text("Bus station"))),
-    Scaffold(body: Center(child: Text("Taxi"))),
-    Scaffold(body: Center(child: Text("Caffe"))),
-    Scaffold(body: Center(child: Text("Clothes"))),
-    Scaffold(body: Center(child: Text("Shopping mall"))),
-    Scaffold(body: Center(child: Text("Help"))),
+    Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+        centerTitle: true,
+        title: const Text("Messages"),
+      ),
+      body: ListView.builder(
+        itemCount: 15,
+        itemBuilder: (context, index) {
+          return Card(
+            margin: const EdgeInsets.all(10),
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  ClipOval(
+                    child: Image.asset(
+                      'images/mo.jpg',
+                      width: 50,
+                      height: 50,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "User ${index + 1}",
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        const SizedBox(height: 5),
+                        const Text(
+                          "This is a preview of the message...",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Text(
+                    "12:00",
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
+    ),
+    Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+          centerTitle: true,
+          title: const Text("Favorite"),
+        ),
+        body: const Center(child: Text("Favorite"))),
+    Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+          centerTitle: true,
+          title: const Text("Resturant"),
+        ),
+        body: const Center(child: Text("Resturant"))),
+    Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+          centerTitle: true,
+          title: const Text("Location"),
+        ),
+        body: const Center(child: Text("Location"))),
+    Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+          centerTitle: true,
+          title: const Text("Garden"),
+        ),
+        body: const Center(child: Text("Garden"))),
+    Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+          centerTitle: true,
+          title: const Text("Takeaway"),
+        ),
+        body: const Center(child: Text("Takeaway"))),
+    Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+          centerTitle: true,
+          title: const Text("Gym"),
+        ),
+        body: const Center(child: Text("Gym"))),
+    Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+          centerTitle: true,
+          title: const Text("Train Station"),
+        ),
+        body: const Center(child: Text("Train Station"))),
+    Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+          centerTitle: true,
+          title: const Text("Bus Station"),
+        ),
+        body: const Center(child: Text("Bus station"))),
+    Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+          centerTitle: true,
+          title: const Text("Taxi"),
+        ),
+        body: const Center(child: Text("Taxi"))),
+    Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+          centerTitle: true,
+          title: const Text("Caffe"),
+        ),
+        body: const Center(child: Text("Caffe"))),
+    Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+          centerTitle: true,
+          title: const Text("Clothes"),
+        ),
+        body: const Center(child: Text("Clothes"))),
+    Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+          centerTitle: true,
+          title: const Text("Shopping mall"),
+        ),
+        body: const Center(child: Text("Shopping mall"))),
+    Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+          centerTitle: true,
+          title: const Text("Help"),
+        ),
+        body: const Center(child: Text("Connected With Us"))),
   ];
 
   @override
@@ -97,7 +238,8 @@ class _homePageState extends State<homePage> {
                           return Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 8),
                             child: CircleAvatar(
-                              backgroundColor: Colors.blueAccent,
+                              backgroundColor:
+                                  const Color.fromARGB(255, 53, 7, 69),
                               child: IconButton(
                                 icon: Icon(categoriesIcons[index],
                                     color: Colors.white),
@@ -116,6 +258,16 @@ class _homePageState extends State<homePage> {
                       ),
                     ),
                     const SizedBox(height: 20),
+                    const Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Best Places",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 53, 7, 69),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
                     Expanded(
                       child: GridView.builder(
                         itemCount: productImages.length,
@@ -194,9 +346,9 @@ class _homePageState extends State<homePage> {
           onPressed: () {
             showSearch(context: context, delegate: CustomSearchDelegate());
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.search_rounded,
-            color: colorAnimated.color,
+            color: Colors.white,
           ),
         ),
       ],
