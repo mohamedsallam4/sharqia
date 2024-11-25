@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:appbar_animated/appbar_animated.dart';
-import 'package:sharqia/personalAcc.dart';
+import 'package:sharqia/Activites/favorite.dart';
+import 'package:sharqia/personalAcc/personalAcc.dart';
 
 // ignore: camel_case_types
 class homePage extends StatefulWidget {
@@ -25,7 +26,6 @@ class _homePageState extends State<homePage> {
   ];
 
   final List<IconData> categoriesIcons = [
-    Icons.local_post_office_rounded,
     Icons.favorite,
     Icons.restaurant,
     Icons.local_offer,
@@ -38,80 +38,17 @@ class _homePageState extends State<homePage> {
     Icons.local_cafe_rounded,
     Icons.dry_cleaning_sharp,
     Icons.shopping_cart,
-    Icons.question_mark_rounded,
   ];
 
-  final List<Widget> pages = [
+  final List<Widget> Activities = [
     Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 53, 7, 69),
         centerTitle: true,
-        title: const Text("Messages"),
+        title: const Text("Favorite"),
       ),
-      body: ListView.builder(
-        itemCount: 15,
-        itemBuilder: (context, index) {
-          return Card(
-            margin: const EdgeInsets.all(10),
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  ClipOval(
-                    child: Image.asset(
-                      'images/mo.jpg',
-                      width: 50,
-                      height: 50,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "User ${index + 1}",
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                        const SizedBox(height: 5),
-                        const Text(
-                          "This is a preview of the message...",
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.grey,
-                          ),
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
-                        ),
-                      ],
-                    ),
-                  ),
-                  const Text(
-                    "12:00",
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.grey,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          );
-        },
-      ),
+      body: Container(width: double.infinity, child: Favorite()),
     ),
-    Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
-          centerTitle: true,
-          title: const Text("Favorite"),
-        ),
-        body: const Center(child: Text("Favorite"))),
     Scaffold(
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 53, 7, 69),
@@ -247,7 +184,7 @@ class _homePageState extends State<homePage> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => pages[index],
+                                      builder: (context) => Activities[index],
                                     ),
                                   );
                                 },
