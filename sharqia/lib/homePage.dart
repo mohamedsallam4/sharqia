@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:appbar_animated/appbar_animated.dart';
+import 'package:sharqia/Activites/busstation.dart';
+import 'package:sharqia/Activites/caffe.dart';
+import 'package:sharqia/Activites/clothes.dart';
 import 'package:sharqia/Activites/favorite.dart';
+import 'package:sharqia/Activites/garden.dart';
+import 'package:sharqia/Activites/gym.dart';
+import 'package:sharqia/Activites/resturant.dart';
+import 'package:sharqia/Activites/shoppingmall.dart';
+import 'package:sharqia/Activites/takeaway.dart';
+import 'package:sharqia/Activites/taxi.dart';
+import 'package:sharqia/Activites/trainstation.dart';
 import 'package:sharqia/personalAcc/personalAcc.dart';
 
 // ignore: camel_case_types
@@ -28,7 +38,6 @@ class _homePageState extends State<homePage> {
   final List<IconData> categoriesIcons = [
     Icons.favorite,
     Icons.restaurant,
-    Icons.local_offer,
     Icons.forest_outlined,
     Icons.fastfood,
     Icons.fitness_center_outlined,
@@ -43,6 +52,7 @@ class _homePageState extends State<homePage> {
   final List<Widget> Activities = [
     Scaffold(
       appBar: AppBar(
+        foregroundColor: Colors.white,
         backgroundColor: const Color.fromARGB(255, 53, 7, 69),
         centerTitle: true,
         title: const Text("Favorite"),
@@ -50,89 +60,95 @@ class _homePageState extends State<homePage> {
       body: Container(width: double.infinity, child: Favorite()),
     ),
     Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
-          centerTitle: true,
-          title: const Text("Resturant"),
-        ),
-        body: const Center(child: Text("Resturant"))),
+      appBar: AppBar(
+        foregroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+        centerTitle: true,
+        title: const Text("Resturants"),
+      ),
+      body: Container(width: double.infinity, child: Resturants()),
+    ),
     Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
-          centerTitle: true,
-          title: const Text("Location"),
-        ),
-        body: const Center(child: Text("Location"))),
+      appBar: AppBar(
+        foregroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+        centerTitle: true,
+        title: const Text("Garden"),
+      ),
+      body: Container(width: double.infinity, child: Garden()),
+    ),
     Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
-          centerTitle: true,
-          title: const Text("Garden"),
-        ),
-        body: const Center(child: Text("Garden"))),
+      appBar: AppBar(
+        foregroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+        centerTitle: true,
+        title: const Text("Takeaway"),
+      ),
+      body: Container(width: double.infinity, child: Takeaway()),
+    ),
     Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
-          centerTitle: true,
-          title: const Text("Takeaway"),
-        ),
-        body: const Center(child: Text("Takeaway"))),
+      appBar: AppBar(
+        foregroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+        centerTitle: true,
+        title: const Text("Gym"),
+      ),
+      body: Container(width: double.infinity, child: Gym()),
+    ),
     Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
-          centerTitle: true,
-          title: const Text("Gym"),
-        ),
-        body: const Center(child: Text("Gym"))),
+      appBar: AppBar(
+        foregroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+        centerTitle: true,
+        title: const Text("Train Stations"),
+      ),
+      body: Container(width: double.infinity, child: TrainStations()),
+    ),
     Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
-          centerTitle: true,
-          title: const Text("Train Station"),
-        ),
-        body: const Center(child: Text("Train Station"))),
+      appBar: AppBar(
+        foregroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+        centerTitle: true,
+        title: const Text("Bus Stations"),
+      ),
+      body: Container(width: double.infinity, child: busStations()),
+    ),
     Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
-          centerTitle: true,
-          title: const Text("Bus Station"),
-        ),
-        body: const Center(child: Text("Bus station"))),
+      appBar: AppBar(
+        foregroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+        centerTitle: true,
+        title: const Text("Taxi"),
+      ),
+      body: Container(width: double.infinity, child: Taxi()),
+    ),
     Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
-          centerTitle: true,
-          title: const Text("Taxi"),
-        ),
-        body: const Center(child: Text("Taxi"))),
+      appBar: AppBar(
+        foregroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+        centerTitle: true,
+        title: const Text("Caffee"),
+      ),
+      body: Container(width: double.infinity, child: Caffe()),
+    ),
     Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
-          centerTitle: true,
-          title: const Text("Caffe"),
-        ),
-        body: const Center(child: Text("Caffe"))),
+      appBar: AppBar(
+        foregroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+        centerTitle: true,
+        title: const Text("Clothes"),
+      ),
+      body: Container(width: double.infinity, child: Clothes()),
+    ),
     Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
-          centerTitle: true,
-          title: const Text("Clothes"),
-        ),
-        body: const Center(child: Text("Clothes"))),
-    Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
-          centerTitle: true,
-          title: const Text("Shopping mall"),
-        ),
-        body: const Center(child: Text("Shopping mall"))),
-    Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 53, 7, 69),
-          centerTitle: true,
-          title: const Text("Help"),
-        ),
-        body: const Center(child: Text("Connected With Us"))),
+      appBar: AppBar(
+        foregroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 53, 7, 69),
+        centerTitle: true,
+        title: const Text("ShoppingMall"),
+      ),
+      body: Container(width: double.infinity, child: ShoppingMall()),
+    ),
   ];
 
   @override
@@ -178,6 +194,9 @@ class _homePageState extends State<homePage> {
                               backgroundColor:
                                   const Color.fromARGB(255, 53, 7, 69),
                               child: IconButton(
+                                style: ButtonStyle(
+                                    overlayColor:
+                                        WidgetStatePropertyAll(Colors.black)),
                                 icon: Icon(categoriesIcons[index],
                                     color: Colors.white),
                                 onPressed: () {
@@ -313,14 +332,43 @@ class ProductDetailPage extends StatelessWidget {
 
 class CustomSearchDelegate extends SearchDelegate {
   final List<String> searchTerms = [
-    'Nile',
-    'Giza Pyramids',
-    'Luxor Temple',
-    'Aswan',
-    'Hurghada',
-    'Pharaonic Temples',
-    'Diving in Egypt',
-    'Downtown Cairo',
+    'منيا القمح',
+    "بلبيس",
+    "مشتول السوق",
+    "العاشر من رمضان",
+    "أبو حماد",
+    "الزقازيق",
+    "الإنايات",
+    "ديرب نجم",
+    "الإبراهيمية",
+    "هيهيا",
+    "القرين",
+    "أبو كبير",
+    "فاقوس",
+    "أولاد صقر",
+    "كفر صقر",
+    "منشأة أبو عمر",
+    "الحسينية",
+    "صان الحجر القبلية",
+    "سنهوت",
+    "السعديين",
+    "البلاشون",
+    "حفنا",
+    "شلشلمون",
+    "العزازية",
+    "كفر شلشلمون",
+    "بني هلال",
+    "كوم العرب",
+    "شبلنجه",
+    "الشبر",
+    "الحميدية",
+    "المحمدية",
+    "ميت بشار",
+    "الجديدة",
+    "الزنكلون",
+    "النعامنة",
+    "بني صالح",
+    "كفر سمري",
   ];
 
   @override

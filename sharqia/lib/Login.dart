@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sharqia/ForgetPassword.dart';
 import 'package:sharqia/HomePage.dart';
+import 'package:sharqia/SignUp.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -115,6 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                 Expanded(
                   child: ElevatedButton(
                     style: const ButtonStyle(
+                        overlayColor: WidgetStatePropertyAll(Colors.black),
                         backgroundColor: MaterialStatePropertyAll(
                             Color.fromARGB(255, 53, 7, 69))),
                     onPressed: () {
@@ -160,7 +162,13 @@ class _LoginPageState extends State<LoginPage> {
                   style: const ButtonStyle(
                       overlayColor: MaterialStatePropertyAll(
                           Color.fromARGB(141, 54, 7, 69))),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SignupPage(),
+                        ));
+                  },
                   child: const Text(
                     "Sign Up",
                     style: TextStyle(color: Color.fromARGB(255, 53, 7, 69)),

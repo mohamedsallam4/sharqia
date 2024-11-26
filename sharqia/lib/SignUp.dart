@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sharqia/Login.dart';
 
 enum Gender { male, female }
 
@@ -368,9 +369,16 @@ class _SignupPageState extends State<SignupPage> {
                   Expanded(
                     child: ElevatedButton(
                       style: const ButtonStyle(
+                          overlayColor: WidgetStatePropertyAll(Colors.black),
                           backgroundColor: MaterialStatePropertyAll(
                               Color.fromARGB(255, 53, 7, 69))),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginPage(),
+                            ));
+                      },
                       child: const Text("Sign Up"),
                     ),
                   ),
@@ -383,7 +391,7 @@ class _SignupPageState extends State<SignupPage> {
                     child: OutlinedButton.icon(
                       style: const ButtonStyle(
                           overlayColor: MaterialStatePropertyAll(
-                              Color.fromARGB(108, 255, 255, 255)),
+                              Color.fromARGB(108, 0, 0, 0)),
                           backgroundColor: MaterialStatePropertyAll(
                               Color.fromARGB(255, 53, 7, 69))),
                       icon: const Icon(Icons.facebook, color: Colors.white),
@@ -408,7 +416,13 @@ class _SignupPageState extends State<SignupPage> {
                     style: const ButtonStyle(
                         overlayColor: MaterialStatePropertyAll(
                             Color.fromARGB(141, 54, 7, 69))),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LoginPage(),
+                          ));
+                    },
                     child: const Text(
                       "Log in",
                       style: TextStyle(color: Color.fromARGB(255, 53, 7, 69)),

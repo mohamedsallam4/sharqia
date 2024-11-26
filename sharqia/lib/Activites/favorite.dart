@@ -40,7 +40,7 @@ class Favorite extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12.0),
-                  boxShadow: [],
+                  boxShadow: [BoxShadow(color: Colors.grey)],
                 ),
                 child: Center(
                     child: Column(

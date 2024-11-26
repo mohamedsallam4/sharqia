@@ -1,6 +1,18 @@
 import 'package:flutter/material.dart';
 
 class TrainStations extends StatelessWidget {
+  final List<String> productImages = [
+    'images/أفضل-الأماكن-السياحية-في-مصر-2023.jpg',
+    'images/أهرامات-الجيزة-بالقاهرة-الكبرى.jpg',
+    'images/معبد-حتشبسوت-ليلًا.jpg',
+    'images/السياحة-النيلية-بأسوان.jpg',
+    'images/الغردقة.jpg',
+    'images/المعابد-الفرعونية.jpg',
+    'images/سياحة-الغوص-في-مصر.jpg',
+    'images/صورة-من-الأعلى-لوسط-القاهرة.jpg',
+    "images/منطقة-وسط-البلد-القاهرة.jpg",
+  ];
+
   static const routeName = '/TrainStations';
 
   @override
@@ -15,7 +27,7 @@ class TrainStations extends StatelessWidget {
             mainAxisSpacing: 16.0,
             childAspectRatio: 1.0,
           ),
-          itemCount: 2,
+          itemCount: productImages.length,
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: () {
@@ -28,22 +40,17 @@ class TrainStations extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12.0),
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 6.0,
-                      spreadRadius: 2.0,
-                    ),
-                  ],
+                  boxShadow: [],
                 ),
                 child: Center(
-                  child: Text(
-                    'Item ${index + 1}',
-                    style: const TextStyle(
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
+                    child: Column(
+                  children: [
+                    Image.asset(
+                      productImages[index],
+                      fit: BoxFit.cover,
+                    )
+                  ],
+                )),
               ),
             );
           },

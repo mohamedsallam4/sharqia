@@ -6,13 +6,11 @@ import 'package:sharqia/Activites/clothes.dart';
 import 'package:sharqia/Activites/favorite.dart';
 import 'package:sharqia/Activites/garden.dart';
 import 'package:sharqia/Activites/gym.dart';
-import 'package:sharqia/Activites/locations.dart';
 import 'package:sharqia/Activites/resturant.dart';
 import 'package:sharqia/Activites/shoppingmall.dart';
 import 'package:sharqia/Activites/takeaway.dart';
 import 'package:sharqia/Activites/taxi.dart';
 import 'package:sharqia/Activites/trainstation.dart';
-
 import 'package:sharqia/Login.dart';
 
 void main() {
@@ -67,7 +65,6 @@ class MyApp extends StatelessWidget {
         Clothes.routeName: (context) => Clothes(),
         Garden.routeName: (context) => Garden(),
         Gym.routeName: (context) => Gym(),
-        Locations.routeName: (context) => Locations(),
         Resturants.routeName: (context) => Resturants(),
         ShoppingMall.routeName: (context) => ShoppingMall(),
         Takeaway.routeName: (context) => Takeaway(),

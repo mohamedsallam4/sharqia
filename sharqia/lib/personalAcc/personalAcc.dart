@@ -19,6 +19,7 @@ class _personAccState extends State<personAcc> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        foregroundColor: Colors.white,
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 53, 7, 69),
         title: const Text("Profile"),

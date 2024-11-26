@@ -14,6 +14,7 @@ class _forgrtPasswordState extends State<forgrtPassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        foregroundColor: Colors.white,
         backgroundColor: const Color.fromARGB(255, 53, 7, 69),
         centerTitle: true,
         title: const Text("Find my Account !"),
