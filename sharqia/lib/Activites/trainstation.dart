@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:sharqia/homePage.dart';
 
-class TrainStations extends StatelessWidget {
+class Trainstation extends StatelessWidget {
   final List<String> productImages = [
-    'images/أفضل-الأماكن-السياحية-في-مصر-2023.jpg',
-    'images/أهرامات-الجيزة-بالقاهرة-الكبرى.jpg',
-    'images/معبد-حتشبسوت-ليلًا.jpg',
-    'images/السياحة-النيلية-بأسوان.jpg',
-    'images/الغردقة.jpg',
-    'images/المعابد-الفرعونية.jpg',
-    'images/سياحة-الغوص-في-مصر.jpg',
-    'images/صورة-من-الأعلى-لوسط-القاهرة.jpg',
-    "images/منطقة-وسط-البلد-القاهرة.jpg",
+    "images/31.jpg",
+    "images/32.jpg",
+    "images/33.jpg",
+    "images/34.jpg",
+    "images/35.jpg",
+    "images/36.jpg",
+    "images/37.jpg",
   ];
 
   static const routeName = '/TrainStations';
@@ -31,23 +30,37 @@ class TrainStations extends StatelessWidget {
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProductDetailPage(
+                      imagePath: productImages[index],
+                    ),
+                  ),
+                );
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
+                    duration: Duration(seconds: 2),
                     content: Text('You clicked on item ${index + 1}'),
                   ),
                 );
               },
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12.0),
-                  boxShadow: [],
+                  borderRadius: BorderRadius.circular(30),
+                  boxShadow: [BoxShadow(color: Colors.grey)],
                 ),
                 child: Center(
                     child: Column(
                   children: [
-                    Image.asset(
-                      productImages[index],
-                      fit: BoxFit.cover,
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: Image.asset(
+                        productImages[index],
+                        height: 155,
+                        width: 155,
+                        fit: BoxFit.cover,
+                      ),
                     )
                   ],
                 )),

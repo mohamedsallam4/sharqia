@@ -24,15 +24,15 @@ class homePage extends StatefulWidget {
 // ignore: camel_case_types
 class _homePageState extends State<homePage> {
   final List<String> productImages = [
-    'images/أفضل-الأماكن-السياحية-في-مصر-2023.jpg',
-    'images/أهرامات-الجيزة-بالقاهرة-الكبرى.jpg',
-    'images/معبد-حتشبسوت-ليلًا.jpg',
-    'images/السياحة-النيلية-بأسوان.jpg',
-    'images/الغردقة.jpg',
-    'images/المعابد-الفرعونية.jpg',
-    'images/سياحة-الغوص-في-مصر.jpg',
-    'images/صورة-من-الأعلى-لوسط-القاهرة.jpg',
-    "images/منطقة-وسط-البلد-القاهرة.jpg",
+    "images/1.jpg",
+    "images/2.jpg",
+    "images/3.jpg",
+    "images/4.jpg",
+    "images/5.jpg",
+    "images/6.jpg",
+    "images/7.jpg",
+    "images/8.jpg",
+    "images/9.jpg",
   ];
 
   final List<IconData> categoriesIcons = [
@@ -66,7 +66,7 @@ class _homePageState extends State<homePage> {
         centerTitle: true,
         title: const Text("Resturants"),
       ),
-      body: Container(width: double.infinity, child: Resturants()),
+      body: Container(width: double.infinity, child: Resturant()),
     ),
     Scaffold(
       appBar: AppBar(
@@ -102,7 +102,7 @@ class _homePageState extends State<homePage> {
         centerTitle: true,
         title: const Text("Train Stations"),
       ),
-      body: Container(width: double.infinity, child: TrainStations()),
+      body: Container(width: double.infinity, child: Trainstation()),
     ),
     Scaffold(
       appBar: AppBar(
@@ -111,7 +111,7 @@ class _homePageState extends State<homePage> {
         centerTitle: true,
         title: const Text("Bus Stations"),
       ),
-      body: Container(width: double.infinity, child: busStations()),
+      body: Container(width: double.infinity, child: Busstation()),
     ),
     Scaffold(
       appBar: AppBar(
@@ -147,7 +147,7 @@ class _homePageState extends State<homePage> {
         centerTitle: true,
         title: const Text("ShoppingMall"),
       ),
-      body: Container(width: double.infinity, child: ShoppingMall()),
+      body: Container(width: double.infinity, child: Shoppingmall()),
     ),
   ];
 
@@ -163,7 +163,7 @@ class _homePageState extends State<homePage> {
           child: Stack(
             children: [
               Image.asset(
-                "images/نهر-النيل-بالقاهرة.jpg",
+                "images/79.jpg",
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * 0.4,
                 fit: BoxFit.cover,

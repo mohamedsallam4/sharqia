@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:sharqia/homePage.dart';
 
-class ShoppingMall extends StatelessWidget {
+class Shoppingmall extends StatelessWidget {
   final List<String> productImages = [
-    'images/أفضل-الأماكن-السياحية-في-مصر-2023.jpg',
-    'images/أهرامات-الجيزة-بالقاهرة-الكبرى.jpg',
-    'images/معبد-حتشبسوت-ليلًا.jpg',
-    'images/السياحة-النيلية-بأسوان.jpg',
-    'images/الغردقة.jpg',
-    'images/المعابد-الفرعونية.jpg',
-    'images/سياحة-الغوص-في-مصر.jpg',
-    'images/صورة-من-الأعلى-لوسط-القاهرة.jpg',
-    "images/منطقة-وسط-البلد-القاهرة.jpg",
+    "images/45.jpg",
+    "images/46.jpg",
+    "images/47.jpg",
+    "images/48.jpg",
+    "images/49.jpg",
+    "images/50.jpg",
+    "images/51.jpg",
+    "images/52.jpg",
   ];
 
-  static const routeName = '/ShoppingMall';
+  static const routeName = '/shoppingmall';
 
   @override
   Widget build(BuildContext context) {
@@ -31,23 +31,37 @@ class ShoppingMall extends StatelessWidget {
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProductDetailPage(
+                      imagePath: productImages[index],
+                    ),
+                  ),
+                );
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
+                    duration: Duration(seconds: 2),
                     content: Text('You clicked on item ${index + 1}'),
                   ),
                 );
               },
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12.0),
-                  boxShadow: [],
+                  borderRadius: BorderRadius.circular(30),
+                  boxShadow: [BoxShadow(color: Colors.grey)],
                 ),
                 child: Center(
                     child: Column(
                   children: [
-                    Image.asset(
-                      productImages[index],
-                      fit: BoxFit.cover,
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: Image.asset(
+                        productImages[index],
+                        height: 155,
+                        width: 155,
+                        fit: BoxFit.cover,
+                      ),
                     )
                   ],
                 )),
